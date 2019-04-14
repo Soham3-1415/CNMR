@@ -1,0 +1,3 @@
+* text=lf
+*.xml -crlf
+*.webmanifest -crlf

@@ -1,0 +1,26 @@
+/bin
+/out
+
+#debug specific
+*.log
+
+#intellij specific
+.idea/
+*.iml
+*.ipr
+*.iws
+
+#eclipse specific
+.metadata/*
+.settings
+
+.classpath
+.project
+
+#windows Junk
+*.ini
+[Tt]humbs.db
+*.DS_Store
+
+#KDE directory file
+.directory
