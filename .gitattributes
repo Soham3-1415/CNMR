@@ -1,3 +1,8 @@
 * text=lf
-*.xml -crlf
-*.webmanifest -crlf
+*.xml -lf
+*.webmanifest -lf
+.gitignore -lf
+.gitattributes -lf
+*.html -lf
+*.js -lf
+*.css -lf
