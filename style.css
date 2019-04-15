@@ -1,0 +1,26 @@
+body {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.block {
+    height: 100%;
+    position: relative;
+}
+
+#model, #sketcher, #computed_molecule, #computed_spectrum {
+    border:0;
+    height:100%;
+    width: 100%;
+    position: relative;
+}
+
+#button {
+    border-radius: 3em;
+    position:absolute;
+    right:52.5%;
+    top:5%
+}
