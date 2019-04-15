@@ -1,3 +1,6 @@
+const hostname  = window.location.hostname;
+const apiURL = `https://api.${hostname}`;
+
 const model = new ChemDoodle.TransformCanvas3D('model', document.getElementById('model').clientWidth, document.getElementById('model').clientHeight);
 model.specs.set3DRepresentation('Ball and Stick');
 model.specs.atoms_sphereDiameter_3D=300;
@@ -26,7 +29,25 @@ const updateSpectrum = (jcamp) => {
 updateSpectrum('');
 
 const update = () => {
+
 	let mol = ChemDoodle.writeMOL(sketcher.getMolecule());
-	let newMol = '';
-	model.loadContent([ChemDoodle.readMOL(newMol,1)]);
+	fetch(`${apiURL}/mol2DInput`,{
+		method:'post',
+		headers: {"Content-type": "application/json; charset=UTF-8"},
+		body:JSON.stringify({mol:mol})}).then(
+			function(response) {
+				if (response.status !== 200) {
+					console.log('Error: ' + response.status);
+					return;
+				}
+				response.json().then(function(data) {
+					console.log(data);
+					model.loadContent([ChemDoodle.readMOL(data.mol,1)]);
+					updateSpectrum(data.jcamp);
+				});
+			}
+		)
+		.catch(function(err) {
+			console.log('Fetch Error :-S', err);
+		});
 };
