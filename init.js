@@ -1,6 +1,3 @@
-const hostname  = window.location.hostname;
-const apiURL = `https://api.${hostname}`;
-
 const model = new ChemDoodle.TransformCanvas3D('model', document.getElementById('model').clientWidth, document.getElementById('model').clientHeight);
 model.specs.set3DRepresentation('Ball and Stick');
 model.specs.atoms_sphereDiameter_3D=300;
@@ -29,9 +26,8 @@ const updateSpectrum = (jcamp) => {
 updateSpectrum('');
 
 const update = () => {
-
 	let mol = ChemDoodle.writeMOL(sketcher.getMolecule());
-	fetch(`${apiURL}/mol2DInput`,{
+	fetch(`api/mol2DInput`,{
 		method:'post',
 		headers: {"Content-type": "application/json; charset=UTF-8"},
 		body:JSON.stringify({mol:mol})}).then(
