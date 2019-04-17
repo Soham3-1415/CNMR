@@ -1,7 +1,7 @@
 const model = new ChemDoodle.TransformCanvas3D('model', document.getElementById('model').clientWidth, document.getElementById('model').clientHeight);
 model.specs.set3DRepresentation('Ball and Stick');
 model.specs.atoms_sphereDiameter_3D=300;
-model.specs.backgroundColor = '#2196f3';
+model.specs.backgroundColor = '#FFFFFF';
 model.loadContent();
 
 const sketcher = new ChemDoodle.SketcherCanvas('sketcher', document.getElementById('sketcher').clientWidth, document.getElementById('sketcher').clientHeight,{oneMolecule:true});
