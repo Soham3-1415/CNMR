@@ -12,10 +12,11 @@ sketcher.specs.bondLength_2D = 75;
 sketcher.specs.atoms_font_size_2D = 25;
 sketcher.repaint();
 
-const updateSpectrum = (jcamp) => {
+const updateSpectrum = (jcamp,name) => {
 	const computed = new ChemDoodle.io.JCAMPInterpreter().makeStructureSpectrumSet('computed', jcamp);
 	computed[0].resize(document.getElementById('computed_molecule').parentElement.clientWidth, document.getElementById('computed_molecule').parentElement.clientHeight);
 	computed[1].resize(document.getElementById('computed_spectrum').parentElement.clientWidth, document.getElementById('computed_spectrum').parentElement.clientHeight);
+	computed[1].spectrum.title=name;
 	computed[0].specs.atoms_font_size_2D = 12;
 	computed[0].specs.bonds_width_2D = 1.5;
 	//computed[0].specs.scale=2;
@@ -37,9 +38,8 @@ const update = () => {
 					return;
 				}
 				response.json().then(function(data) {
-					console.log(data);
 					model.loadContent([ChemDoodle.readMOL(data.mol,1)]);
-					updateSpectrum(data.jcamp);
+					updateSpectrum(data.jcamp.jcamp.value,data.name);
 				});
 			}
 		)
