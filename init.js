@@ -44,6 +44,6 @@ const update = () => {
 			}
 		)
 		.catch(function(err) {
-			console.log('Fetch Error :-S', err);
+			console.log('Fetch Error :', err);
 		});
 };
