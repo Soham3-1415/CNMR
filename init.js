@@ -8,8 +8,8 @@ const sketcher = new ChemDoodle.SketcherCanvas('sketcher', document.getElementBy
 sketcher.specs.atoms_displayTerminalCarbonLabels_2D = true;
 sketcher.specs.atoms_useJMOLColors = true;
 sketcher.specs.bonds_clearOverlaps_2D = true;
-sketcher.specs.bondLength_2D = 75;
-sketcher.specs.atoms_font_size_2D = 25;
+sketcher.specs.bondLength_2D = 66;
+sketcher.specs.atoms_font_size_2D = 22;
 sketcher.repaint();
 
 const updateSpectrum = (jcamp,name) => {
@@ -19,7 +19,6 @@ const updateSpectrum = (jcamp,name) => {
 	computed[1].spectrum.title=name;
 	computed[0].specs.atoms_font_size_2D = 12;
 	computed[0].specs.bonds_width_2D = 1.5;
-	//computed[0].specs.scale=2;
 	computed[0].repaint();
 	computed[1].repaint();
 };
