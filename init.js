@@ -37,8 +37,14 @@ const update = () => {
 					return;
 				}
 				response.json().then(function(data) {
-					model.loadContent([ChemDoodle.readMOL(data.mol,1)]);
-					updateSpectrum(data.jcamp.jcamp.value,data.name);
+					if(data.mol==='SDF UNKNOWN')
+						model.loadContent([]);
+					else
+						model.loadContent([ChemDoodle.readMOL(data.mol,1)]);
+					if(data.jcamp.jcamp.value === 'JCAMP UNKNOWN')
+						updateSpectrum('',data.name);
+					else
+						updateSpectrum(data.jcamp.jcamp.value,data.name);
 				});
 			}
 		)
