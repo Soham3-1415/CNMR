@@ -42,7 +42,7 @@ const update = () => {
 					if(data.jcamp.jcamp.value === 'JCAMP UNKNOWN')
 						updateSpectrum('',data.name);
 					else
-						updateSpectrum(data.jcamp.jcamp.value,data.name);
+						updateSpectrum(data.jcamp,data.name);
 				});
 			}
 		)
