@@ -23,8 +23,6 @@ const updateSpectrum = (jcamp,name) => {
 	computed[1].repaint();
 };
 
-updateSpectrum('','');
-
 const update = () => {
 	let mol = ChemDoodle.writeMOL(sketcher.getMolecule());
 	fetch(`api/mol2DInput`,{
