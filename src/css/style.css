@@ -18,7 +18,7 @@ body {
     position: relative;
 }
 
-#button {
+#compute-button {
     border-radius: 3em;
     position:absolute;
     right:52.5%;
