@@ -39,7 +39,7 @@ const update = () => {
 						model.loadContent([]);
 					else
 						model.loadContent([ChemDoodle.readMOL(data.mol,1)]);
-					if(data.jcamp.jcamp.value === 'JCAMP UNKNOWN')
+					if(data.jcamp === 'JCAMP UNKNOWN')
 						updateSpectrum('',data.name);
 					else
 						updateSpectrum(data.jcamp,data.name);
