@@ -33,7 +33,19 @@
 					<div class="cell small-6">
 						<canvas id="sketcher" class="ChemDoodleWebComponent"  alt="ChemDoodle Sketcher">This browser does not support HTML5/Canvas.</canvas>
 					</div>
-					<button type="button" onclick="update()" class="button" id="button">Compute Molecule</button>
+					<button type="button" onclick="update()" class="button" id="button">
+						<div class="grid-x">
+							<div class="cell small-8">
+								<div class="button-text">
+									Compute
+								</div>
+							</div>
+							<div class="cell small-2"></div>
+							<div class="cell small-2">
+								<div id="compute-spinner" class="sp sp-hydrogen load-hide"></div>
+							</div>
+						</div>
+					</button>
 				<div class="cell small-6">
 					<canvas id="model" class="ChemDoodleWebComponent" alt="ChemDoodle 3D Model">This browser does not support HTML5/Canvas.</canvas>
 				</div>

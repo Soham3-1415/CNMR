@@ -12,6 +12,8 @@ sketcher.specs.bondLength_2D = 39;
 sketcher.specs.atoms_font_size_2D = 13;
 sketcher.repaint();
 
+const computeSpinnerVisible = state => {state?document.getElementById('compute-spinner').style.display='block':document.getElementById('compute-spinner').style.display='none'};
+
 const updateSpectrum = (jcamp,name) => {
 	const computed = new ChemDoodle.io.JCAMPInterpreter().makeStructureSpectrumSet('computed', jcamp);
 	computed[0].resize(document.getElementById('computed_molecule').parentElement.clientWidth, document.getElementById('computed_molecule').parentElement.clientHeight);
@@ -24,6 +26,7 @@ const updateSpectrum = (jcamp,name) => {
 };
 
 const update = () => {
+	computeSpinnerVisible(true);
 	let mol = ChemDoodle.writeMOL(sketcher.getMolecule());
 	fetch(`api/mol2DInput`,{
 		method:'post',
@@ -48,5 +51,6 @@ const update = () => {
 		)
 		.catch(function(err) {
 			console.log('Fetch Error :', err);
-		});
+		})
+		.finally(() => {computeSpinnerVisible(false)});
 };
