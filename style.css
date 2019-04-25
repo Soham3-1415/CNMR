@@ -22,5 +22,18 @@ body {
     border-radius: 3em;
     position:absolute;
     right:52.5%;
-    top:5%
+    top:5%;
+}
+
+.button {
+    background-color: #cc4b37;
+}
+
+.button:focus {
+    outline-style: none;
+    background-color: #cc4b37;
+}
+
+.button:hover,.button:active {
+    background-color: #bb3a26;
 }
