@@ -38,6 +38,8 @@ const update = () => {
 					return;
 				}
 				response.json().then(function(data) {
+					if(data.name === 'NAME UNKNOWN')
+						data.name = '';
 					if(data.mol==='SDF UNKNOWN')
 						model.loadContent([]);
 					else
