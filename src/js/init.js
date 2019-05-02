@@ -1,3 +1,12 @@
+const issueCallout = document.getElementById('issue-callout');
+const issueMessage = document.getElementById('issue-message');
+
+const displayIssue = message => {
+	console.log(message);
+	issueMessage.innerText = message;
+	issueCallout.style.display = 'block';
+};
+
 const model = new ChemDoodle.TransformCanvas3D('model', document.getElementById('model').clientWidth, document.getElementById('model').clientHeight);
 model.specs.set3DRepresentation('Ball and Stick');
 model.specs.atoms_sphereDiameter_3D=300;
@@ -38,8 +47,10 @@ const update = () => {
 					return;
 				}
 				response.json().then(function(data) {
-					if(data.name === 'NAME UNKNOWN')
+					if(data.name === 'NAME UNKNOWN') {
 						data.name = '';
+						displayIssue('Cannot find molecule in database.');
+					}
 					if(data.mol==='SDF UNKNOWN')
 						model.loadContent([]);
 					else
@@ -53,6 +64,7 @@ const update = () => {
 		)
 		.catch(function(err) {
 			console.log('Fetch Error :', err);
+			displayIssue('Fetch Error :', err);
 		})
 		.finally(() => {computeSpinnerVisible(false)});
 };

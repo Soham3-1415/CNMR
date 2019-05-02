@@ -21,7 +21,7 @@
 	<link type="text/css" rel="stylesheet" href="css/ChemDoodleWeb.css" media="screen"/>
 	<link rel="stylesheet" href="js/uis/jquery-ui-1.11.4.css" type="text/css">
 	<script type="text/javascript" src="js/uis/ChemDoodleWeb-uis.js"></script>
-	<link type="text/css" rel="stylesheet" href="css/style.css?2.0.1" media="screen"/>
+	<link type="text/css" rel="stylesheet" href="css/style.css?2.0.2" media="screen"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>CNMR</title>
@@ -54,7 +54,27 @@
 		<div class="cell small-6">
 			<div class="grid-x grid-frame block">
 				<div class="cell small-6">
-					<canvas id="computed_molecule" class="ChemDoodleWebComponent" alt="ChemDoodle Molecule">This browser does not support HTML5/Canvas.</canvas>
+					<div class="grid-y grid-frame block">
+						<div class="cell small-1">
+							<div class="grid-x grid-frame block">
+								<div class="cell small-2">
+								</div>
+								<div class="cell small-8">
+									<div id="issue-callout" class="callout alert small issue" data-closable>
+										<h6 id="issue-message"></h6>
+										<button class="close-button small" aria-label="Dismiss alert" type="button" data-close>
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+								</div>
+								<div class="cell small-2">
+								</div>
+							</div>
+						</div>
+						<div class="cell small-11">
+							<canvas id="computed_molecule" class="ChemDoodleWebComponent" alt="ChemDoodle Molecule">This browser does not support HTML5/Canvas.</canvas>
+						</div>
+					</div>
 				</div>
 				<div class="cell small-6">
 					<canvas id="computed_spectrum" class="ChemDoodleWebComponent" alt="ChemDoodle Spectrum">This browser does not support HTML5/Canvas.</canvas>
@@ -62,6 +82,6 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/init.js?ver=2.0.1"></script>
+	<script src="js/init.js?ver=2.0.2"></script>
 </body>
 </html>

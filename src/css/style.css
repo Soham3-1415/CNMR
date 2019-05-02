@@ -11,11 +11,16 @@ body {
     position: relative;
 }
 
-#model, #sketcher, #computed_molecule, #computed_spectrum {
+#model, #sketcher, #computed_molecule, #computed_spectrum, .issue {
     border:0;
     height:100%;
     width: 100%;
     position: relative;
+}
+
+.issue {
+    border-radius: .25em;
+    display: none;
 }
 
 #compute-button {
