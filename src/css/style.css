@@ -13,8 +13,11 @@ body {
 
 #model, #sketcher, #computed_molecule, #computed_spectrum, .issue {
     border:0;
-    height:100%;
     width: 100%;
+}
+
+#model, #computed_molecule, #computed_spectrum, .issue {
+    height:100%;
     position: relative;
 }
 
