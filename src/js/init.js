@@ -37,7 +37,7 @@ const updateSpectrum = (jcamp,name) => {
 const update = () => {
 	computeSpinnerVisible(true);
 	let mol = ChemDoodle.writeMOL(sketcher.getMolecule());
-	fetch(`api/mol2DInput`,{
+	fetch(`api/v1/mol2DInput`,{
 		method:'post',
 		headers: {"Content-type": "application/json; charset=UTF-8"},
 		body:JSON.stringify({mol:mol})}).then(
