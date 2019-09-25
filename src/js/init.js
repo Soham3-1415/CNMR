@@ -1,3 +1,5 @@
+const version = 'v2';
+const endpoint = 'api/' + version;
 const issueCallout = document.getElementById('issue-callout');
 const issueMessage = document.getElementById('issue-message');
 
@@ -39,7 +41,7 @@ const updateSpectrum = (jcamp, name) => {
 const update = () => {
     computeSpinnerVisible(true);
     let mol = ChemDoodle.writeMOL(sketcher.getMolecule());
-    fetch(`api/v1/mol2DInput`, {
+    fetch(endpoint + `/mol2DInput`, {
         method: 'post',
         headers: {"Content-type": "application/json; charset=UTF-8"},
         body: JSON.stringify({mol: mol})
